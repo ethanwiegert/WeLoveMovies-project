@@ -33,7 +33,8 @@ async function readTheaters(req, res, next){
 
 async function readReviews(req, res, next){
     const { movieId } = req.params;
-    res.send({ data: await service.readReviews(movieId)})
+    const data=await service.readReviews(movieId)
+    res.send({data})
 }
 
 module.exports={
