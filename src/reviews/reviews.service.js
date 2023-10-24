@@ -8,12 +8,7 @@ function read(reviewId){
     .first()
 }
 
-/*const update = updatedReview => {
-     return knex("reviews")
-    .select("*")
-    .where({ re: updatedReview.review_id })
-   
-};*/
+
 function update(updatedReview) {
   return knex("reviews")
     .select("*")
@@ -21,8 +16,6 @@ function update(updatedReview) {
     .update(updatedReview);
 }
 
-// returnUpdate function is used to send back the updated review with nested critic object.
-// mapProperties is used to nest critic under the property, "critic".
 
 const addCriticDetails = mapProperties({
   preferred_name: "critic.preferred_name",
